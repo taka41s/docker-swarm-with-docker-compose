@@ -51,18 +51,3 @@ services:
       replicas: 5
       placement:
         constraints: [node.role == manager]
-
-  redis:
-    image: "redis:7.0.4-alpine"
-    ports:
-      - 6379:6379
-
-  sidekiq:
-    build: .
-    command: bundle exec sidekiq
-    depends_on:
-      - redis
-    volumes:
-      - .:/stant_challenge
-    env_file:
-      - .env
