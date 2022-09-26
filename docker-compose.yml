@@ -21,8 +21,6 @@ services:
       LANG: en_US.UTF-8
     depends_on:
       - database_postgresql
-      - redis
-      - sidekiq
     stdin_open: true
     tty: true
 
