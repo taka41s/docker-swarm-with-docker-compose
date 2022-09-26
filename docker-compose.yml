@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   server:
+    image: 3.2.0-preview2-bullseye
     build:
       context: .
     entrypoint: entrypoint.sh # Script in charge on running migrations.
