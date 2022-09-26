@@ -40,17 +40,17 @@ services:
       replicas: 5
       placement:
         constraints: [node.role == manager]
+
   visualizer:
     image: dockersamples/visualizer:stable
-    ports:
-      - "8888/8080"
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+    - "/var/run/docker.sock:/var/run/docker.sock"
+    ports:
+    - "8080:8080"
     deploy:
       replicas: 5
       placement:
         constraints: [node.role == manager]
-    
 
   redis:
     image: "redis:7.0.4-alpine"
