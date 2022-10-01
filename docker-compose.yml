@@ -5,9 +5,8 @@ services:
     build:
       context: .
     entrypoint: entrypoint.sh # Script in charge on running migrations.
-    command: bundle exec rails s -p 3000 -b 0.0.0.0
     volumes:
-      - .:/stant_challenge:cached
+      - .:/project:cached
     deploy:
       replicas: 5
       placement:
